@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# サイトマップの場所を明示的に伝える（ドメイン名は書き換えてください）
+Sitemap: https://your-project-name.vercel.app/sitemap.xml
