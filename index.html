@@ -68,6 +68,39 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         h2 { border-left: 5px solid var(--primary-red); padding-left: 15px; margin: 2rem 0 1rem; }
+        
+        /* Steamボタン & ゲーム説明 */
+        .steam-banner {
+            background: var(--steam-blue);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 1px solid #2a475e;
+        }
+        .steam-button {
+            background-color: #66c0f4;
+            color: white;
+            padding: 12px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+        .steam-button:hover { background-color: #47a4d8; }
+
+        .game-desc {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--gold);
+        }
 
         /* データ表示 */
         .data-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; background: #111; }
@@ -97,6 +130,17 @@
 <div class="container">
 
     <div id="home" class="tab-content active">
+        <div class="game-desc">
+            <h2>🌍 ゲーム概要</h2>
+            <p><strong>『The Midnight Walkers』</strong>は、ゾンビが蔓延る巨大な高層ビル「リバティ・グランドセンター」を舞台とした、究極の<strong>垂直型サバイバル抽出シューター</strong>です。</p>
+            <p>プレイヤーは階層ごとに異なる恐怖と戦い、貴重な物資を略奪し、血に飢えたウォーカーや他の生存者を退けながら、エレベーターや脱出ポイントに到達しなければなりません。死はすべてを失うことを意味します。あなたは真夜中のタワーを支配できるか、それとも闇に呑まれるか。</p>
+        </div>
+
+        <div class="steam-banner">
+            <h3 style="margin:0;">今すぐタワーへ潜入せよ</h3>
+            <p style="color: #8f98a0;">Steamにて早期アクセス配信中</p>
+            <a href="https://store.steampowered.com/app/2789140/The_Midnight_Walkers/" target="_blank" class="steam-button">Steamストアページへ</a>
+        </div>
         <h2>🧟 タワー生存戦略</h2>
         <div class="task-card">
             <h3>ポータル・タワーの階層構造</h3>
