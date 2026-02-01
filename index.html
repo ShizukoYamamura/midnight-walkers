@@ -101,6 +101,26 @@
             margin-bottom: 30px;
             border-left: 4px solid var(--gold);
         }
+        /* 以前のCSSと併用してください */
+        .data-table strong {
+            font-size: 1.1rem;
+            color: var(--gold);
+        }
+        .highlight {
+            color: #ff4500;
+            font-weight: bold;
+        }
+
+        /* 既存のCSSに追加・調整用 */
+        .data-table-wrapper h2 {
+            color: var(--gold);
+            margin-top: 3rem;
+        }
+        .data-table-wrapper p {
+            font-size: 0.9rem;
+            color: #bbb;
+            margin-bottom: 10px;
+        }
 
         /* データ表示 */
         .data-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; background: #111; }
@@ -232,18 +252,6 @@
     </table>
 </div>
 
-<style>
-    /* 既存のCSSに追加・調整用 */
-    .data-table-wrapper h2 {
-        color: var(--gold);
-        margin-top: 3rem;
-    }
-    .data-table-wrapper p {
-        font-size: 0.9rem;
-        color: #bbb;
-        margin-bottom: 10px;
-    }
-</style>
     </div>
 
     <div id="tasks" class="tab-content">
@@ -312,17 +320,7 @@
     </table>
 </div>
 
-<style>
-    /* 以前のCSSと併用してください */
-    .data-table strong {
-        font-size: 1.1rem;
-        color: var(--gold);
-    }
-    .highlight {
-        color: #ff4500;
-        font-weight: bold;
-    }
-</style>
+
 
 <script>
     function showTab(tabId) {
