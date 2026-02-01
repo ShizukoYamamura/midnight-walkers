@@ -266,18 +266,63 @@
     </div>
 
     <div id="classes" class="tab-content">
-        <h2>👤 クラス固有アビリティ</h2>
-        <table class="data-table">
-            <thead>
-                <tr><th>クラス</th><th>パッシブ</th><th>アクティブ(Q)</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>ブリック</td><td>巨大なハンマーと重装甲で武装した屈強な戦士</td></tr>
-                <tr><td>クロウ</td><td>ダガーを手に、素早い動きで相手の虚を突く暗殺者</td></tr>
-                <tr><td>ロックダウン</td><td>弓を利用して遠距離から一方的に攻撃できる狙撃手</td></tr>
-                <tr><td>バーテンダー</td><td>カクテルを製造して味方を治療、強化できるサポーター</td></tr>
-            </tbody>
-        </table>
+<div class="data-table-wrapper">
+    <h2>👤 プレイヤークラス (Classes) 性能比較</h2>
+    <p>※ポータル・タワー内での役割と、現環境（2026年）の評価をまとめています。</p>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>クラス</th>
+                <th>役割</th>
+                <th>固有スキル / 特徴</th>
+                <th>相性の良い武器</th>
+                <th>海外評価 & 運用</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>バーテンダー</strong><br>(Bartender)</td>
+                <td>回復 / 支援</td>
+                <td><strong>カクテル生成:</strong> 投げつけることで味方を回復、または移動速度を劇的に向上させる。</td>
+                <td>ハンドガン / 片手剣</td>
+                <td><span class="highlight">必須枠。</span> パーティの生存率を左右する最重要クラス。ソロでも自己バフで高い生存力を誇る。</td>
+            </tr>
+            <tr>
+                <td><strong>ブリック</strong><br>(Brick)</td>
+                <td>タンク / 破壊</td>
+                <td><strong>物理破壊:</strong> 扉やバリケードを一撃で破壊。全クラス中最大のHPと防御力を持つ。</td>
+                <td>大型ハンマー / ショットガン</td>
+                <td>前衛の柱。ゾンビの群れを強引に突破できる。大型ハンマーでの部位破壊性能が極めて高い。</td>
+            </tr>
+            <tr>
+                <td><strong>クロウ</strong><br>(Crow)</td>
+                <td>潜入 / 暗殺</td>
+                <td><strong>隠密移動:</strong> 短時間、足音を完全に消して移動可能。背後からの攻撃に強力な補正が乗る。</td>
+                <td>ダガー / カタナ</td>
+                <td>PvP特化。他プレイヤーを奇襲し、物資を奪って逃げる「ハイリスク・ハイリターン」な職。</td>
+            </tr>
+            <tr>
+                <td><strong>ロックダウン</strong><br>(Lockdown)</td>
+                <td>索敵 / 防衛</td>
+                <td><strong>エリア制圧:</strong> 特定の場所を封鎖。コンポジットボウ使用時にズーム・安定性が向上。</td>
+                <td>コンポジットボウ / スピア</td>
+                <td>タワーの「垂直移動」を管理する職。階段やエレベーターホールでの防衛戦において右に出る者はいない。</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<style>
+    /* 以前のCSSと併用してください */
+    .data-table strong {
+        font-size: 1.1rem;
+        color: var(--gold);
+    }
+    .highlight {
+        color: #ff4500;
+        font-weight: bold;
+    }
+</style>
     </div>
 
 </div>
