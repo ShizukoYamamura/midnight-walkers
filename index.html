@@ -145,6 +145,7 @@
     <button class="tab-btn" onclick="showTab('weapons')">武器性能</button>
     <button class="tab-btn" onclick="showTab('tasks')">全ミッション</button>
     <button class="tab-btn" onclick="showTab('classes')">クラス</button>
+    <button class="tab-btn" onclick="showTab('area')">階層別ガイド</button>
 </nav>
 
 <div class="container">
@@ -319,7 +320,7 @@
         </tbody>
     </table>
 </div>
-    <div id="classes" class="tab-content">
+    <div id="area" class="tab-content">
 <div class="data-table-wrapper">
     <h2>🏢 リバティ・グランドセンター 階層別ガイド</h2>
     <p>※上層階へ進むほど、環境ダメージや特殊変異種のリスクが増大します。</p>
@@ -381,7 +382,6 @@
         white-space: nowrap;
     }
 </style>
-
 
 <script>
     function showTab(tabId) {
