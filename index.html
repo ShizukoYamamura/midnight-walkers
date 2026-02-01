@@ -143,7 +143,7 @@
         </div>
         <h2>🧟 タワー生存戦略</h2>
         <div class="task-card">
-            <h3>ポータル・タワーの階層構造</h3>
+            <h3>リバティ グランド センターの階層構造</h3>
             <p>1-5F: ロビー・商業区。初心者向けだが、脱出を狙うプレイヤーとの遭遇率も高い。<br>
                6-15F: 居住・オフィス区。複雑な地形で、不意打ちの危険度が増大。<br>
                16F+: ラボ・ペントハウス。ナイトビジョンなしでの探索は不可能に近い。</p>
@@ -152,24 +152,98 @@
 
     <div id="weapons" class="tab-content">
         <h2>🔫 武器詳細スペック</h2>
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>名称</th>
-                    <th>ダメージ</th>
-                    <th>RPM</th>
-                    <th>有効射程</th>
-                    <th>備考</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Silent Whisper</td><td>25</td><td>300</td><td>15m</td><td>消音機標準装備。ゾンビ用。</td></tr>
-                <tr><td>LGC-Standard</td><td>42</td><td>650</td><td>45m</td><td>バランス重視。主力装備。</td></tr>
-                <tr><td>Bone Crusher</td><td>120</td><td>60</td><td>5m</td><td>屋内での遭遇戦で無類の強さ。</td></tr>
-                <tr><td>Shadow Bolt</td><td>95</td><td>25</td><td>100m+</td><td>高階層での遠距離狙撃用。</td></tr>
-                <tr><td>Viper SMG</td><td>30</td><td>900</td><td>20m</td><td>連射力で圧倒。リロードに隙。</td></tr>
-            </tbody>
-        </table>
+<div class="data-table-wrapper">
+    <h2>⚔️ 近接武器 (Melee Weapons)</h2>
+    <p>※本作の主力武器。耐久値と部位破壊性能が重要です。</p>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>名称</th>
+                <th>主な使用者</th>
+                <th>攻撃タイプ</th>
+                <th>特徴・運用アドバイス</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>大型ハンマー</td>
+                <td>BRICK (タンク)</td>
+                <td>打撃 / 破壊</td>
+                <td>圧倒的な衝撃力。ゾンビの頭部を粉砕し、脆い壁を壊してショートカットを作るのに必須。</td>
+            </tr>
+            <tr>
+                <td>カタナ / ククリ刀</td>
+                <td>CROW (暗殺者)</td>
+                <td>斬撃 / 出血</td>
+                <td>攻撃の出が非常に速い。範囲が広く、複数の敵を同時に足止め（スタッガー）可能。</td>
+            </tr>
+            <tr>
+                <td>スピア (長槍)</td>
+                <td>LOCKDOWN / HUNTER</td>
+                <td>刺突 / 距離</td>
+                <td>リーチが最長。狭い通路や階段で、壁に武器を弾かれることなく安全圏から突ける。</td>
+            </tr>
+            <tr>
+                <td>タクティカルダガー</td>
+                <td>CROW</td>
+                <td>刺突 / 致命</td>
+                <td>正面火力は低いが、背後攻撃（バックスタブ）で他プレイヤーを即死させるポテンシャルを持つ。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>🏹 遠距離・特殊武器 (Ranged & Special)</h2>
+    <p>※弾薬・リソースが非常に貴重。PvPや緊急時の切り札として運用します。</p>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>名称</th>
+                <th>特性</th>
+                <th>メリット</th>
+                <th>デメリット</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>コンポジットボウ</td>
+                <td>無音遠距離</td>
+                <td>銃声を出さずに敵を排除できるため、周囲のゾンビを呼び寄せない。</td>
+                <td>矢の弾道落下が大きく、遠距離のヘッドショットには高度な技術が必要。</td>
+            </tr>
+            <tr>
+                <td>タクティカル・SG</td>
+                <td>瞬間火力</td>
+                <td>近距離での対プレイヤー戦で最強。クラス「BRICK」が持つと脅威。</td>
+                <td>リロードが極めて遅く、外した際のリスクが非常に大きい。</td>
+            </tr>
+            <tr>
+                <td>カクテル (ポーション)</td>
+                <td>投擲バフ・デバフ</td>
+                <td>BARTENDER専用。味方の回復や移動速度強化、敵の視界奪取が可能。</td>
+                <td>リソース管理がシビア。投擲をミスすると味方に被害が出ることも。</td>
+            </tr>
+            <tr>
+                <td>ハンタートラップ</td>
+                <td>足止め / 罠</td>
+                <td>HUNTER専用。通路に設置して他プレイヤーを確実に拘束できる。</td>
+                <td>設置に時間がかかるため、接敵中の即時使用には向かない。</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<style>
+    /* 既存のCSSに追加・調整用 */
+    .data-table-wrapper h2 {
+        color: var(--gold);
+        margin-top: 3rem;
+    }
+    .data-table-wrapper p {
+        font-size: 0.9rem;
+        color: #bbb;
+        margin-bottom: 10px;
+    }
+</style>
     </div>
 
     <div id="tasks" class="tab-content">
@@ -198,10 +272,10 @@
                 <tr><th>クラス</th><th>パッシブ</th><th>アクティブ(Q)</th></tr>
             </thead>
             <tbody>
-                <tr><td>Scavenger</td><td>物資の輝き強調</td><td>無音移動(10s)</td></tr>
-                <tr><td>Combatant</td><td>反動制御+20%</td><td>アーマー一時強化</td></tr>
-                <tr><td>Technician</td><td>ハッキング加速</td><td>警戒ドローン展開</td></tr>
-                <tr><td>Medic</td><td>回復量UP</td><td>自己蘇生キット使用可</td></tr>
+                <tr><td>ブリック</td><td>巨大なハンマーと重装甲で武装した屈強な戦士</td></tr>
+                <tr><td>クロウ</td><td>ダガーを手に、素早い動きで相手の虚を突く暗殺者</td></tr>
+                <tr><td>ロックダウン</td><td>弓を利用して遠距離から一方的に攻撃できる狙撃手</td></tr>
+                <tr><td>バーテンダー</td><td>カクテルを製造して味方を治療、強化できるサポーター</td></tr>
             </tbody>
         </table>
     </div>
