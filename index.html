@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Midnight Walkers | 究極攻略データベース</title>
+    
+    <style>
+        :root {
+            --primary-red: #8b0000;
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text-light: #e0e0e0;
+            --gold: #d4af37;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ヘッダー：ロゴなし・タイトル強調 */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+            height: 300px; /* ロゴなしに合わせて少し短縮 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-red);
+        }
+
+        h1 { font-size: 3.8rem; margin: 0; letter-spacing: 6px; color: #fff; text-shadow: 0 0 20px rgba(255,0,0,0.8); }
+        .subtitle { font-size: 1.2rem; color: #bbb; margin-top: 10px; font-weight: bold; }
+
+        /* 広告ユニット用のスタイル */
+        .ads-container {
+            margin: 20px auto;
+            text-align: center;
+            background: #111;
+            padding: 10px;
+            border: 1px dashed #333;
+            max-width: 1100px;
+        }
+        .ads-label { font-size: 10px; color: #555; margin-bottom: 5px; display: block; }
+
+        /* ナビゲーション */
+        nav {
+            background: #111;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            background: none; border: none; color: #888;
+            padding: 15px 25px; font-size: 1rem; font-weight: bold;
+            cursor: pointer; transition: 0.3s;
+        }
+        .tab-btn.active { color: #fff; border-bottom: 3px solid var(--primary-red); background: rgba(139, 0, 0, 0.1); }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        .tab-content { display: none; animation: fadeIn 0.4s ease; }
+        .tab-content.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        h2 { border-left: 5px solid var(--primary-red); padding-left: 15px; margin: 2rem 0 1rem; }
+
+        /* データ表示 */
+        .data-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; background: #111; }
+        .data-table th, .data-table td { padding: 12px; border: 1px solid #333; text-align: center; }
+        .data-table th { background: var(--primary-red); color: #fff; }
+
+        .task-card { background: var(--card-bg); padding: 20px; border-radius: 8px; border: 1px solid #333; margin-bottom: 20px; }
+        .vendor-name { color: var(--gold); font-weight: bold; font-size: 1.2rem; border-bottom: 1px solid #444; display: block; margin-bottom: 10px; }
+
+        footer { text-align: center; padding: 3rem; color: #555; background: #000; margin-top: 4rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>The Midnight Walkers</h1>
+    <p class="subtitle">VERTICAL EXTRACTION SHOOTER DATABASE</p>
+</header>
+
+<div class="ads-container">
+    <span class="ads-label">ADVERTISEMENT</span>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<nav>
+    <button class="tab-btn active" onclick="showTab('home')">TOP</button>
+    <button class="tab-btn" onclick="showTab('weapons')">武器性能</button>
+    <button class="tab-btn" onclick="showTab('tasks')">全タスク</button>
+    <button class="tab-btn" onclick="showTab('classes')">クラス</button>
+</nav>
+
+<div class="container">
+
+    <div id="home" class="tab-content active">
+        <h2>🧟 タワー生存戦略</h2>
+        <div class="task-card">
+            <h3>ポータル・タワーの階層構造</h3>
+            <p>1-5F: ロビー・商業区。初心者向けだが、脱出を狙うプレイヤーとの遭遇率も高い。<br>
+               6-15F: 居住・オフィス区。複雑な地形で、不意打ちの危険度が増大。<br>
+               16F+: ラボ・ペントハウス。ナイトビジョンなしでの探索は不可能に近い。</p>
+        </div>
+    </div>
+
+    <div id="weapons" class="tab-content">
+        <h2>🔫 武器詳細スペック</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>ダメージ</th>
+                    <th>RPM</th>
+                    <th>有効射程</th>
+                    <th>備考</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Silent Whisper</td><td>25</td><td>300</td><td>15m</td><td>消音機標準装備。ゾンビ用。</td></tr>
+                <tr><td>LGC-Standard</td><td>42</td><td>650</td><td>45m</td><td>バランス重視。主力装備。</td></tr>
+                <tr><td>Bone Crusher</td><td>120</td><td>60</td><td>5m</td><td>屋内での遭遇戦で無類の強さ。</td></tr>
+                <tr><td>Shadow Bolt</td><td>95</td><td>25</td><td>100m+</td><td>高階層での遠距離狙撃用。</td></tr>
+                <tr><td>Viper SMG</td><td>30</td><td>900</td><td>20m</td><td>連射力で圧倒。リロードに隙。</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="ads-container">
+        <span class="ads-label">ADVERTISEMENT</span>
+        <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5w+4e-db+86" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div id="tasks" class="tab-content">
+        <h2>🤝 ベンダー全タスク・完全攻略</h2>
+        <div class="task-card">
+            <span class="vendor-name">🔧 イライジャ (Engineer)</span>
+            <p><strong>1. 暗闇の灯火:</strong> 各階の予備電源を3つ起動。報酬：改造ツール(青)</p>
+            <p><strong>2. 通信復旧:</strong> アンテナパーツを回収し、屋上で設置。報酬：脱出信号弾</p>
+        </div>
+        <div class="task-card">
+            <span class="vendor-name">💉 サラ (Medical)</span>
+            <p><strong>1. 基礎医薬品:</strong> 住宅街で鎮痛剤3個を発見。報酬：スタミナブースト</p>
+            <p><strong>2. 変異の核心:</strong> 特殊個体の心臓を回収。報酬：恒久的な所持重量+2kg</p>
+        </div>
+        <div class="task-card">
+            <span class="vendor-name">🚬 J (Informant)</span>
+            <p><strong>1. 掃除屋:</strong> プレイヤーを3名排除。報酬：闇市へのアクセス権</p>
+            <p><strong>2. 極秘文書:</strong> 管理事務所の金庫を破る。報酬：$150,000</p>
+        </div>
+    </div>
+
+    <div id="classes" class="tab-content">
+        <h2>👤 クラス固有アビリティ</h2>
+        <table class="data-table">
+            <thead>
+                <tr><th>クラス</th><th>パッシブ</th><th>アクティブ(Q)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Scavenger</td><td>物資の輝き強調</td><td>無音移動(10s)</td></tr>
+                <tr><td>Combatant</td><td>反動制御+20%</td><td>アーマー一時強化</td></tr>
+                <tr><td>Technician</td><td>ハッキング加速</td><td>警戒ドローン展開</td></tr>
+                <tr><td>Medic</td><td>回復量UP</td><td>自己蘇生キット使用可</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2026 The Midnight Walkers Fan Base. <br>
+    ※Google AdSenseを有効にするには、発行されたca-pub IDを入力してください。
+</footer>
+
+<script>
+    function showTab(tabId) {
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => content.classList.remove('active'));
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        const activeBtn = Array.from(buttons).find(btn => btn.textContent.toLowerCase().includes(tabId) || (tabId==='home' && btn.textContent==='TOP'));
+        if(activeBtn) activeBtn.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
