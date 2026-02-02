@@ -3,386 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Midnight Walkers | 究極攻略データベース</title>
+    <meta name="description" content="ゾンビPvPvE『The Midnight Walkers』の完全攻略Wiki。リバティ・グランド・センターの階層マップ、最強クラスビルド、脱出ルート、レアアイテム情報を最速で更新中。">
+    <title>The Midnight Walkers 攻略Intel | 日本語Wiki</title>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9908835148006630"
      crossorigin="anonymous"></script>
-    
     <style>
+        /* --- ダークホラーテーマ設定 --- */
         :root {
-            --primary-red: #8b0000;
-            --dark-bg: #0a0a0a;
-            --card-bg: #1a1a1a;
-            --text-light: #e0e0e0;
-            --gold: #d4af37;
-            --steam-blue: #1b2838; /* 追加：Steamバナー用の色 */
+            --accent-color: #d32f2f; /* 鮮烈な赤（血や警告のイメージ） */
+            --accent-hover: #b71c1c;
+            --bg-color: #0a0a0a;      /* ほぼ漆黒 */
+            --card-bg: #1e1e1e;
+            --text-main: #f5f5f5;
+            --text-muted: #888;
+            --border-color: #333;
         }
-
         body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             margin: 0;
-            padding: 0;
+            line-height: 1.6;
         }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        a:hover { color: var(--accent-color); }
+        ul { list-style: none; padding: 0; margin: 0; }
 
+        /* --- ヘッダー（ナビゲーション） --- */
         header {
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&q=80&w=1000');
-            background-size: cover;
-            background-position: center;
-            height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border-bottom: 4px solid var(--primary-red);
-        }
-
-        h1 { font-size: 3.5rem; margin: 0; letter-spacing: 6px; color: #fff; text-shadow: 0 0 20px rgba(255,0,0,0.8); }
-        .subtitle { font-size: 1.2rem; color: #bbb; margin-top: 10px; font-weight: bold; }
-
-        nav {
-            background: #111;
-            padding: 0;
+            background: rgba(0, 0, 0, 0.95);
+            border-bottom: 2px solid var(--accent-color);
             position: sticky;
             top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #333;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.2);
+        }
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        .logo { 
+            font-size: 28px; 
+            font-weight: 900; 
+            letter-spacing: 1px; 
+            text-transform: uppercase;
+            color: #fff;
+        }
+        .logo span { color: var(--accent-color); }
+        .nav-links { display: flex; gap: 25px; font-size: 0.95rem; font-weight: bold; }
+
+        /* --- レイアウト --- */
+        .container {
+            max-width: 1280px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        /* --- メインコンテンツ --- */
+        .hero-banner {
+            position: relative;
+            height: 300px;
+            background: linear-gradient(to right, #000, transparent), url('https://placehold.jp/1200x400.png?text=Liberty+Grand+Center');
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+            border: 1px solid #333;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            padding-left: 50px;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px #000;
+            border-left: 6px solid var(--accent-color);
+            padding-left: 20px;
+            line-height: 1;
+        }
+        .hero-content p { font-size: 1.2rem; color: #ccc; margin-top: 10px; padding-left: 20px;}
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--text-main);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        /* 記事グリッド */
+        .grid-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+        }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .post-card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+        .post-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background: #222;
+            filter: brightness(0.8);
+        }
+        .post-body { padding: 15px; }
+        .cat-label {
+            background: #333;
+            color: var(--accent-color);
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .post-title { font-size: 1.1rem; margin: 10px 0; font-weight: bold; line-height: 1.4; }
+        
+        /* データベーステーブル風リスト */
+        .data-list li {
+            background: var(--card-bg);
+            margin-bottom: 8px;
+            padding: 12px 15px;
+            border-left: 3px solid transparent;
+            display: flex;
+            justify-content: space-between;
+        }
+        .data-list li:hover { border-left-color: var(--accent-color); background: #252525; }
+
+        /* --- サイドバー --- */
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+        }
+        .widget-head {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        /* ランキング */
+        .rank-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+        .rank-num {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #333;
+            line-height: 1;
+        }
+        .rank-item:nth-child(1) .rank-num { color: var(--accent-color); } /* 1位だけ赤 */
+
+        /* AdSense枠 */
+        .ad-space {
+            background: #111;
+            color: #444;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* スマホ対応 */
-        }
-
-        .tab-btn {
-            background: none; border: none; color: #888;
-            padding: 15px 20px; font-size: 1rem; font-weight: bold;
-            cursor: pointer; transition: 0.3s;
-        }
-        .tab-btn.active { color: #fff; border-bottom: 3px solid var(--primary-red); background: rgba(139, 0, 0, 0.1); }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
-        .tab-content { display: none; animation: fadeIn 0.4s ease; }
-        .tab-content.active { display: block; }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        h2 { border-left: 5px solid var(--primary-red); padding-left: 15px; color: #fff; }
-        
-        .steam-banner {
-            background: var(--steam-blue);
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            display: flex;
-            flex-direction: column;
             align-items: center;
+            height: 250px;
+            font-size: 0.8rem;
+            border: 1px dashed #444;
+        }
+
+        /* --- フッター --- */
+        footer {
+            background: #000;
+            border-top: 1px solid #333;
+            padding: 50px 0;
             text-align: center;
-            border: 1px solid #2a475e;
+            margin-top: 60px;
         }
-        .steam-button {
-            background-color: #66c0f4;
-            color: white;
-            padding: 12px 40px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-top: 20px;
-            font-size: 1.2rem;
-            transition: background 0.3s;
+        .footer-nav a { margin: 0 15px; color: var(--text-muted); font-size: 0.9rem; }
+
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2rem; }
+            .nav-links { display: none; } /* 本来はハンバーガーメニュー */
         }
-        .steam-button:hover { background-color: #47a4d8; }
-
-        .game-desc {
-            background: rgba(255,255,255,0.05);
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            border-left: 4px solid var(--gold);
-        }
-
-        .data-table-wrapper { margin-top: 2rem; }
-        .data-table-wrapper h2 { color: var(--gold); margin-top: 1rem; }
-        .data-table-wrapper p { font-size: 0.9rem; color: #bbb; margin-bottom: 10px; }
-
-        .data-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; background: #111; font-size: 0.9rem; }
-        .data-table th, .data-table td { padding: 12px; border: 1px solid #333; text-align: left; }
-        .data-table th { background: var(--primary-red); color: #fff; text-align: center; }
-        .data-table td:nth-child(3) { color: #ff4500; font-weight: bold; }
-
-        .task-card { background: var(--card-bg); padding: 20px; border-radius: 8px; border: 1px solid #333; margin-bottom: 20px; }
-        .vendor-name { color: var(--gold); font-weight: bold; font-size: 1.2rem; border-bottom: 1px solid #444; display: block; margin-bottom: 10px; }
-
-        .highlight { color: #ff4500; font-weight: bold; }
-
-        footer { text-align: center; padding: 3rem; color: #555; background: #000; margin-top: 4rem; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>The Midnight Walkers</h1>
-    <p class="subtitle">究極攻略データベース</p>
-</header>
-
-<nav>
-    <button class="tab-btn active" onclick="showTab('home')">TOP</button>
-    <button class="tab-btn" onclick="showTab('weapons')">武器性能</button>
-    <button class="tab-btn" onclick="showTab('tasks')">全ミッション</button>
-    <button class="tab-btn" onclick="showTab('classes')">クラス</button>
-    <button class="tab-btn" onclick="showTab('area')">階層別ガイド</button>
-</nav>
-
-<div class="container">
-
-    <div id="home" class="tab-content active">
-        <div class="game-desc">
-            <h2>🌍 ゲーム概要</h2>
-            <p><strong>『The Midnight Walkers』</strong>は、ゾンビが蔓延る巨大な高層ビル「リバティ・グランドセンター」を舞台とした、究極の<strong>垂直型サバイバル抽出シューター</strong>です。</p>
-            <p>プレイヤーは階層ごとに異なる恐怖と戦い、貴重な物資を略奪し、血に飢えたウォーカーや他の生存者を退けながら、エレベーターや脱出ポイントに到達しなければなりません。</p>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">Midnight <span>Intel</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">TOP</a></li>
+                    <li><a href="#">クラスビルド</a></li>
+                    <li><a href="#">マップ/脱出</a></li>
+                    <li><a href="#">武器DB</a></li>
+                    <li><a href="#">素材・クラフト</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <div class="steam-banner">
-            <h3 style="margin:0; color: #fff;">今すぐタワーへ潜入せよ</h3>
-            <p style="color: #8f98a0;">Steamにて早期アクセス配信中</p>
-            <a href="https://store.steampowered.com/app/2795540/The_Midnight_Walkers/" target="_blank" class="steam-button">Steamストアページへ</a>
-        </div>
+    <div class="container">
+        <main>
+            <section class="hero-banner">
+                <div class="hero-content">
+                    <h1>SURVIVE<br>THE NIGHT</h1>
+                    <p>早期アクセス開始！ 初心者がまず覚えるべき「生存の鉄則」とは？</p>
+                </div>
+            </section>
+
+            <div class="ad-space" style="margin-bottom: 30px;">
+                スポンサーリンク
+            </div>
+
+            <div class="section-header">
+                <span class="section-title">New Operations // 最新記事</span>
+                <a href="#" style="color:var(--text-muted); font-size:0.9rem;">もっと見る &rarr;</a>
+            </div>
+
+            <div class="grid-wrapper">
+                <article class="post-card">
+                    <a href="#">
+                        <img src="https://placehold.jp/300x200.png?text=Solo+Build" alt="ソロビルド" class="post-img">
+                        <div class="post-body">
+                            <span class="cat-label">Class Build</span>
+                            <h3 class="post-title">【ソロ最強】Crow（アサシン）の隠密ビルド構成と立ち回り解説</h3>
+                        </div>
+                    </a>
+                </article>
+                <article class="post-card">
+                    <a href="#">
+                        <img src="https://placehold.jp/300x200.png?text=Map+Guide" alt="マップガイド" class="post-img">
+                        <div class="post-body">
+                            <span class="cat-label">Map / Escape</span>
+                            <h3 class="post-title">リバティ・グランド・センター階層別マップ：脱出ポッドの固定湧き場所</h3>
+                        </div>
+                    </a>
+                </article>
+                <article class="post-card">
+                    <a href="#">
+                        <img src="https://placehold.jp/300x200.png?text=Brick+Tank" alt="ブリック" class="post-img">
+                        <div class="post-body">
+                            <span class="cat-label">Class Build</span>
+                            <h3 class="post-title">Brick（タンク）で壁を破壊せよ！ショートカット開拓とおすすめハンマー</h3>
+                        </div>
+                    </a>
+                </article>
+                 <article class="post-card">
+                    <a href="#">
+                        <img src="https://placehold.jp/300x200.png?text=Boss+Guide" alt="ボス攻略" class="post-img">
+                        <div class="post-body">
+                            <span class="cat-label">PvE Guide</span>
+                            <h3 class="post-title">変異ゾンビ「Runner」の安全な倒し方とパリィのコツ</h3>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <div class="section-header" style="margin-top: 50px;">
+                <span class="section-title">Database // データ一覧</span>
+            </div>
+            <ul class="data-list">
+                <li><a href="#">全武器一覧とダメージデータ（DPSランキング）</a> <span>Updated 2/2</span></li>
+                <li><a href="#">クラフト素材の入手場所まとめ（布・金属片）</a> <span>Updated 2/1</span></li>
+                <li><a href="#">Bartenderのカクテル効果一覧とバフ倍率</a> <span>Updated 1/30</span></li>
+                <li><a href="#">ステータス異常（感染・出血）の治療法</a> <span>Updated 1/29</span></li>
+            </ul>
+
+            <div class="ad-space" style="margin-top: 30px;">
+                スポンサーリンク
+            </div>
+        </main>
+
+        <aside>
+            <div class="sidebar-widget">
+                <div class="widget-head">Trending</div>
+                <div class="rank-item">
+                    <div class="rank-num">1</div>
+                    <div><a href="#">【初心者】死なずに脱出するための「金策」メソッド</a></div>
+                </div>
+                <div class="rank-item">
+                    <div class="rank-num">2</div>
+                    <div><a href="#">最強クラスTier表（ソロ/パーティ別）</a></div>
+                </div>
+                <div class="rank-item">
+                    <div class="rank-num">3</div>
+                    <div><a href="#">Lockdown（スナイパー）の罠設置おすすめスポット</a></div>
+                </div>
+                <div class="rank-item">
+                    <div class="rank-num">4</div>
+                    <div><a href="#">バッグの拡張方法とトレーダーレベル上げ</a></div>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <div class="ad-space" style="height: 300px;">
+                    スポンサーリンク（サイドバー）
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <div class="widget-head">Admin</div>
+                <p style="font-size: 0.9rem; color: #ccc;">
+                    <strong>MW攻略班</strong><br>
+                    ゾンビ系FPS好きのゲーマー2人で運営中。<br>
+                    現在の最高到達階層：15F<br>
+                    <br>
+                    <a href="#" style="color:var(--accent-color);">[お問い合わせはこちら]</a>
+                </p>
+            </div>
+        </aside>
     </div>
 
-    <div id="weapons" class="tab-content">
-        <div class="data-table-wrapper">
-            <h2>⚔️ 近接武器 (Melee Weapons)</h2>
-            <p>※本作の主力武器。耐久値と部位破壊性能が重要です。</p>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>名称</th>
-                        <th>主な使用者</th>
-                        <th>攻撃タイプ</th>
-                        <th>特徴・運用アドバイス</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>大型ハンマー</td>
-                        <td>BRICK (タンク)</td>
-                        <td>打撃 / 破壊</td>
-                        <td>圧倒的な衝撃力。ゾンビの頭部を粉砕し、脆い壁を壊してショートカットを作るのに必須。</td>
-                    </tr>
-                    <tr>
-                        <td>カタナ / ククリ刀</td>
-                        <td>CROW (暗殺者)</td>
-                        <td>斬撃 / 出血</td>
-                        <td>攻撃の出が非常に速い。範囲が広く、複数の敵を同時に足止め（スタッガー）可能。</td>
-                    </tr>
-                    <tr>
-                        <td>スピア (長槍)</td>
-                        <td>LOCKDOWN / HUNTER</td>
-                        <td>刺突 / 距離</td>
-                        <td>リーチが最長。狭い通路や階段で、壁に武器を弾かれることなく安全圏から突ける。</td>
-                    </tr>
-                    <tr>
-                        <td>タクティカルダガー</td>
-                        <td>CROW</td>
-                        <td>刺突 / 致命</td>
-                        <td>正面火力は低いが、背後攻撃（バックスタブ）で他プレイヤーを即死させるポテンシャルを持つ。</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>🏹 遠距離・特殊武器 (Ranged & Special)</h2>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>名称</th>
-                        <th>特性</th>
-                        <th>メリット</th>
-                        <th>デメリット</th>
-                    </tr>
-                </thead>
-                <tbody>
-            <tr>
-                <td>コンポジットボウ</td>
-                <td>無音遠距離</td>
-                <td>銃声を出さずに敵を排除できるため、周囲のゾンビを呼び寄せない。</td>
-                <td>矢の弾道落下が大きく、遠距離のヘッドショットには高度な技術が必要。</td>
-            </tr>
-            <tr>
-                <td>タクティカル・SG</td>
-                <td>瞬間火力</td>
-                <td>近距離での対プレイヤー戦で最強。クラス「BRICK」が持つと脅威。</td>
-                <td>リロードが極めて遅く、外した際のリスクが非常に大きい。</td>
-            </tr>
-            <tr>
-                <td>カクテル (ポーション)</td>
-                <td>投擲バフ・デバフ</td>
-                <td>BARTENDER専用。味方の回復や移動速度強化、敵の視界奪取が可能。</td>
-                <td>リソース管理がシビア。投擲をミスすると味方に被害が出ることも。</td>
-            </tr>
-            <tr>
-                <td>ハンタートラップ</td>
-                <td>足止め / 罠</td>
-                <td>HUNTER専用。通路に設置して他プレイヤーを確実に拘束できる。</td>
-                <td>設置に時間がかかるため、接敵中の即時使用には向かない。</td>
-            </tr>
-                </tbody>
-            </table>
+    <footer>
+        <div class="footer-nav">
+            <a href="#">運営者情報</a>
+            <a href="#">プライバシーポリシー</a>
+            <a href="#">お問い合わせ</a>
         </div>
-    </div> <div id="tasks" class="tab-content">
-        <h2>🤝 ベンダー全ミッション・完全攻略</h2>
-        <div class="task-card">
-            <span class="vendor-name">🔧 イライジャ (Engineer)</span>
-            <p><strong>1. 暗闇の灯火:</strong> 各階の予備電源を3つ起動。報酬：改造ツール(青)</p>
-            <p><strong>2. 通信復旧:</strong> アンテナパーツを回収し、屋上で設置。報酬：脱出信号弾</p>
-        </div>
-        <div class="task-card">
-            <span class="vendor-name">💉 サラ (Medical)</span>
-            <p><strong>1. 基礎医薬品:</strong> 住宅街で鎮痛剤3個を発見。報酬：スタミナブースト</p>
-            <p><strong>2. 変異の核心:</strong> 特殊個体の心臓を回収。報酬：恒久的な所持重量+2kg</p>
-        </div>
-        <div class="task-card">
-            <span class="vendor-name">🚬 J (Informant)</span>
-            <p><strong>1. 掃除屋:</strong> プレイヤーを3名排除。報酬：闇市へのアクセス権</p>
-            <p><strong>2. 極秘文書:</strong> 管理事務所の金庫を破る。報酬：$150,000</p>
-        </div>
-    </div>
-
-    <div id="classes" class="tab-content">
-        <div class="data-table-wrapper">
-            <h2>👤 プレイヤークラス (Classes) 性能比較</h2>
-            <p>※タワー内での役割と、現環境（2026年）の評価をまとめています。</p>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>クラス</th>
-                        <th>役割</th>
-                        <th>固有スキル / 特徴</th>
-                        <th>相性の良い武器</th>
-                        <th>海外評価 & 運用</th>
-                    </tr>
-                </thead>
-                <tbody>
-            <tr>
-                <td><strong>バーテンダー</strong><br>(Bartender)</td>
-                <td>回復 / 支援</td>
-                <td><strong>カクテル生成:</strong> 投げつけることで味方を回復、または移動速度を劇的に向上させる。</td>
-                <td>ハンドガン / 片手剣</td>
-                <td><span class="highlight">必須枠。</span> パーティの生存率を左右する最重要クラス。ソロでも自己バフで高い生存力を誇る。</td>
-            </tr>
-            <tr>
-                <td><strong>ブリック</strong><br>(Brick)</td>
-                <td>タンク / 破壊</td>
-                <td><strong>物理破壊:</strong> 扉やバリケードを一撃で破壊。全クラス中最大のHPと防御力を持つ。</td>
-                <td>大型ハンマー / ショットガン</td>
-                <td>前衛の柱。ゾンビの群れを強引に突破できる。大型ハンマーでの部位破壊性能が極めて高い。</td>
-            </tr>
-            <tr>
-                <td><strong>クロウ</strong><br>(Crow)</td>
-                <td>潜入 / 暗殺</td>
-                <td><strong>隠密移動:</strong> 短時間、足音を完全に消して移動可能。背後からの攻撃に強力な補正が乗る。</td>
-                <td>ダガー / カタナ</td>
-                <td>PvP特化。他プレイヤーを奇襲し、物資を奪って逃げる「ハイリスク・ハイリターン」な職。</td>
-            </tr>
-            <tr>
-                <td><strong>ロックダウン</strong><br>(Lockdown)</td>
-                <td>索敵 / 防衛</td>
-                <td><strong>エリア制圧:</strong> 特定の場所を封鎖。コンポジットボウ使用時にズーム・安定性が向上。</td>
-                <td>コンポジットボウ / スピア</td>
-                <td>タワーの「垂直移動」を管理する職。階段やエレベーターホールでの防衛戦において右に出る者はいない。</td>
-            </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div id="area" class="tab-content">
-        <div class="data-table-wrapper">
-            <h2>🏢 階層別ガイド</h2>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>階層区分</th>
-                        <th>エリア名</th>
-                        <th>危険度</th>
-                        <th>主な入手物資</th>
-                        <th>特徴・攻略アドバイス</th>
-                    </tr>
-                </thead>
-                <tbody>
-            <tr>
-                <td><strong>1F - 4F</strong></td>
-                <td>エントランス / モール</td>
-                <td>★☆☆☆☆</td>
-                <td>食料、基本弾薬、バックパック</td>
-                <td>脱出ポイントが多く、初心者向け。ただし、物資を狙って「降りてきた」上級プレイヤーに遭遇するリスクあり。</td>
-            </tr>
-            <tr>
-                <td><strong>5F - 9F</strong></td>
-                <td>オフィス / コワーキング</td>
-                <td>★★☆☆☆</td>
-                <td>電子部品、回路基板、ツール類</td>
-                <td>遮蔽物（机やパーティション）が多く、<strong>クロウ</strong>による奇襲が発生しやすい。ハッキングが必要な部屋が点在。</td>
-            </tr>
-            <tr>
-                <td><strong>10F - 14F</strong></td>
-                <td>レジデンス (居住区)</td>
-                <td>★★★☆☆</td>
-                <td>医療品、高級衣類、貴重品</td>
-                <td>最も入り組んだエリア。狭い通路で<strong>ブリック</strong>や<strong>ロックダウン</strong>が威力を発揮。生活用品の中からレアな金塊が出ることも。</td>
-            </tr>
-            <tr>
-                <td><strong>15F - 18F</strong></td>
-                <td>R&D ラボ / 病院</td>
-                <td>★★★★☆</td>
-                <td>特殊薬品、武器パーツ、NVG</td>
-                <td><strong>暗闇フロアが標準。</strong> ナイトビジョン(NVG)なしでの探索は自殺行為。特殊変異体「スクリーマー」の生息地。</td>
-            </tr>
-            <tr>
-                <td><strong>19F - 20F</strong></td>
-                <td>ペントハウス / 屋上</td>
-                <td>★★★★★</td>
-                <td>最上位武器、重要機密書類</td>
-                <td>最強の装備を持つパーティが激突するPvPの聖地。酸素濃度が薄く、滞在時間そのものがデバフとなる。</td>
-            </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-</div> <footer>
-    &copy; 2026 The Midnight Walkers Fan Base.
-</footer>
-
-<script>
-    function showTab(tabId) {
-        // すべてのコンテンツを非表示にする
-        const contents = document.querySelectorAll('.tab-content');
-        contents.forEach(content => {
-            content.style.display = 'none';
-            content.classList.remove('active');
-        });
-
-        // すべてのボタンの active クラスを外す
-        const buttons = document.querySelectorAll('.tab-btn');
-        buttons.forEach(btn => btn.classList.remove('active'));
-
-        // 対象のコンテンツを表示する
-        const targetContent = document.getElementById(tabId);
-        if (targetContent) {
-            targetContent.style.display = 'block';
-            targetContent.classList.add('active');
-        }
-
-        // クリックされたボタンをアクティブにする
-        // ボタンの引数 tabId と HTML の ID を直接比較するロジックに修正
-        const clickedBtn = Array.from(buttons).find(btn => 
-            btn.getAttribute('onclick').includes(`'${tabId}'`)
-        );
-        if (clickedBtn) clickedBtn.classList.add('active');
-        
-        window.scrollTo(0, 0); // タブ切り替え時に上へ戻る
-    }
-</script>
+        <p style="color: #444; font-size: 0.8rem; margin-top: 20px;">
+            &copy; 2026 Midnight Intel. <br>当サイトはOneway Ticket Studioとは一切関係ありません。
+        </p>
+    </footer>
 
 </body>
 </html>
